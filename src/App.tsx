@@ -1,23 +1,34 @@
 import * as React from 'react';
+import { connect } from 'react-redux'
+import { ConnectedRouter } from 'connected-react-router'
+import { IStoreState } from './store/types';
+import { rootLoading } from './store/actions/rootActions'
+import routes from './app/routes'
 import './App.css';
-import Hello from './components/Hello';
 
-const logo = require('./logo.svg');
-
-function App() {
-  return (
-    <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <Hello name="TypeScript" />
-    </div>
-  );
+class App extends React.Component<any, any, any> {
+  public componentWillMount() {
+    this.props.dispatch(rootLoading())
+  }
+  public render() {
+    return (
+      <ConnectedRouter history={this.props.history}>
+        {this.props.loading
+          ? (<p>loading</p>)
+          : (
+            <div className="App">
+              <p>Redux works good</p>
+              {routes}
+            </div>
+          )
+        }
+      </ConnectedRouter>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state: IStoreState) => ({
+  loading: state.root.rootLoading
+})
 
+export default connect(mapStateToProps)(App);

@@ -1,0 +1,2 @@
+export const ROOT_LOAD_FINISH = 'root/ROOT_LOAD_FINISH'
+export const ROOT_LOAD_REQUEST = 'root/ROOT_LOAD_REQUEST'
