@@ -1,10 +1,14 @@
 import * as React from 'react'
-import { Route } from 'react-router'
-import Home from './Home/index'
+import { Route, Switch } from 'react-router'
+import Home from './Home'
+import NotFound from './NotFound'
 
 const routes = (
   <div>
-    <Route exact={true} path="/" component={Home} />
+    <Switch>
+      <Route exact={true} path="/" component={Home} />
+      <Route component={NotFound} />
+    </Switch>
   </div>
 )
 
