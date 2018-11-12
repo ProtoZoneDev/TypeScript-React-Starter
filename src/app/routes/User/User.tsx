@@ -7,7 +7,7 @@ interface UserProps { }
 class User extends React.Component<UserProps> {
   render() {
     return (
-      <div>Routing works good</div>
+      <div>Fake User Profile</div>
     )
   }
 }
