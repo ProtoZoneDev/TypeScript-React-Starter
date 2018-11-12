@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
-import { IStoreState } from './store/types';
-import { rootLoading } from './store/actions/rootActions'
-import routes from './app/routes'
+import { IStoreState } from '../store/types';
+import { rootLoading } from '../store/actions/rootActions'
+import routes from './routes'
 import './App.css';
 
 class App extends React.Component<any, any, any> {
