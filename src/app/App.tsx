@@ -4,7 +4,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import { IStoreState } from '../store/types';
 import { rootLoading } from '../store/actions/rootActions'
 import routes from './routes'
-import './App.css';
+import './App.scss';
 
 class App extends React.Component<any, any, any> {
   public componentWillMount() {
@@ -13,15 +13,7 @@ class App extends React.Component<any, any, any> {
   public render() {
     return (
       <ConnectedRouter history={this.props.history}>
-        {this.props.loading
-          ? (<p>loading</p>)
-          : (
-            <div className="App">
-              <p>Redux works good</p>
-              {routes}
-            </div>
-          )
-        }
+        {this.props.loading ? (<p>loading</p>) : (<div className="App"><p>Redux works good</p>{routes}</div>)}
       </ConnectedRouter>
     );
   }
