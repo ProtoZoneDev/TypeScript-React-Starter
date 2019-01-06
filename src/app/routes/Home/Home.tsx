@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { IStoreState } from 'src/store/types';
 import styled from 'styled-components'
 
 interface HomeProps { }

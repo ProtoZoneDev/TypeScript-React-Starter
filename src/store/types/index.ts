@@ -1,3 +1,3 @@
-export interface IStoreState {
-  root: any
-}
+// export interface IStoreState {
+//   root: any
+// }

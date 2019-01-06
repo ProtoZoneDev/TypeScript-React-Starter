@@ -6,8 +6,13 @@ import './middleware/reactotronConfig'
 import App from './app/App';
 import registerServiceWorker from './registerServiceWorker';
 import store, { history } from './store'
+import AppAnalytics from './middleware/appAnalytics'
 
 import './index.css';
+
+new AppAnalytics({
+  history
+})
 
 ReactDOM.render(
   <Provider store={store}>

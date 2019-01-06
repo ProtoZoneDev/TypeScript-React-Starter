@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux'
-import { IStoreState } from '../types/index'
 
 import rootReducer from './rootReducer'
 
